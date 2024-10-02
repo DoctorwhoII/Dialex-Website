@@ -10,7 +10,10 @@
             font-family: 'Comic Neue', cursive; /* Changed font to Comic Neue */
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #1a1a1a, #121212); /* Gradient background */
+            background-image: url('https://e0.pxfuel.com/wallpapers/326/283/desktop-wallpaper-zoom-background-nomad®-dark-website.jpg'); /* Direct image link */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
             color: #e0e0e0; /* Light text */
             display: flex;
             flex-direction: column;
@@ -18,23 +21,7 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-
-        /* Adding subtle texture */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* Dark texture */
-            opacity: 0.05; /* Subtle effect */
-            z-index: 0; /* Behind content */
-        }
-
         h1 {
             margin-bottom: 20px;
             color: #ffffff; /* White for header */
@@ -52,8 +39,6 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-            position: relative;
-            z-index: 1; /* Above texture */
         }
         .button:hover {
             background-color: #1976d2; /* Darker blue on hover */
@@ -74,8 +59,6 @@
             width: 200px;
             cursor: pointer;
             transition: transform 0.2s, border-color 0.2s;
-            position: relative;
-            z-index: 1; /* Above texture */
         }
         .server-item:hover {
             transform: scale(1.05);
