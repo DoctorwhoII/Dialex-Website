@@ -67,6 +67,20 @@
         .under-construction {
             color: #ff9800;
         }
+        .tos {
+            margin-top: 40px;
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            color: #ffffff;
+            text-align: left;
+            display: none; /* Initially hidden */
+        }
+        .tos h2 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +89,7 @@
     <h1>Welcome to Dialex Bot's Page!</h1>
     <a class="button" href="https://discord.com/oauth2/authorize?client_id=1290668436107694172&permissions=8&scope=bot" target="_blank">Invite Dialex Bot to Your Server</a>
     <a class="button" href="#server-selection">Go to Server Selection</a>
+    <a class="button" href="#tos" onclick="toggleTOS()">View Terms of Service</a> <!-- Added TOS link -->
 
     <div id="server-selection" class="server-list" style="display: none;">
         <h2>Select a Server</h2>
@@ -85,10 +100,49 @@
         <div class="server-item under-construction">Unavailable</div>
     </div>
 
+    <div id="tos" class="tos"> <!-- Terms of Service Section -->
+        <h2>Terms of Service (ToS) for Moderators, Admins, and CEO of Nexus Discord Server</h2>
+        <p><strong>Effective Date:</strong> [Insert Date]</p>
+        <p>This document outlines the Terms of Service for the moderators, admins, and CEO of the Nexus Discord server, owned by Dialex. By accepting a position on the staff team, you agree to comply with these terms.</p>
+
+        <h3>1. Roles and Responsibilities</h3>
+        <p><strong>a. Authority:</strong> Moderators and admins are entrusted with enforcing server rules and maintaining order within the Nexus community. This includes monitoring discussions, addressing rule violations, and ensuring a welcoming environment for all members.</p>
+        <p><strong>b. Fairness:</strong> All rules must be enforced consistently and impartially. Staff members should apply rules uniformly to all members, regardless of personal relationships or biases.</p>
+
+        <h3>2. Conflict of Interest</h3>
+        <p>Staff members must avoid situations that could compromise their impartiality. This includes refraining from actions that may be perceived as favoritism or personal bias in moderation decisions.</p>
+
+        <h3>3. Reporting Misconduct</h3>
+        <p>Staff are required to report any misconduct by members or other staff to the CEO promptly. Transparency is crucial in maintaining the integrity of the moderation team.</p>
+
+        <h3>4. Staff Abuse</h3>
+        <p>Any abuse of power by staff will not be tolerated. Instances of overreach, favoritism, or misconduct will result in disciplinary action, which may include removal from the staff team.</p>
+
+        <h3>5. CEO Responsibilities</h3>
+        <p><strong>a. Leadership and Oversight:</strong> The CEO is responsible for the overall vision and direction of the Nexus server. This includes setting policies and ensuring that the server aligns with its goals and values.</p>
+        <p><strong>b. Final Authority:</strong> The CEO has the final say in disputes, rule enforcement, and staff-related issues. Staff members must respect the CEO’s decisions in these matters.</p>
+
+        <h3>6. Creators and Owners</h3>
+        <p>This server is owned and operated by Dialex (User ID: [Your User ID]). For any inquiries or concerns regarding server operations, please reach out to the CEO.</p>
+
+        <h3>7. Modifications</h3>
+        <p>The CEO reserves the right to modify these Terms of Service at any time. Staff will be notified of significant changes, and continued participation on the staff team implies acceptance of the revised terms.</p>
+
+        <h3>8. Enforcement</h3>
+        <p>Violations of these Terms of Service may result in warnings, temporary bans, or permanent removal from the staff team, at the discretion of the CEO.</p>
+
+        <p>By accepting a role within the Nexus Discord server, you agree to adhere to these Terms of Service and uphold the standards expected of staff members. Thank you for your commitment to our community!</p>
+    </div>
+
     <script>
         document.querySelector('.button:nth-of-type(2)').onclick = function() {
             document.getElementById('server-selection').style.display = 'flex';
         };
+
+        function toggleTOS() { // Function to toggle TOS visibility
+            const tos = document.getElementById('tos');
+            tos.style.display = tos.style.display === 'none' ? 'block' : 'none';
+        }
     </script>
     
 </body>
