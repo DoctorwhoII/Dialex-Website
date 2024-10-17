@@ -81,7 +81,7 @@
         }
         .gallery {
             display: flex;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease-in-out;
         }
         .gallery-item {
             min-width: 100%;
@@ -113,6 +113,22 @@
         .nav-button:hover {
             background-color: #1976d2;
         }
+
+        /* Terms of Service */
+        .tos {
+            margin-top: 40px;
+            background-color: rgba(30, 30, 30, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            color: #ffffff;
+            text-align: left;
+            display: none;
+        }
+        .tos h2 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +137,7 @@
     <h1>Welcome to Dialex Bot's Page!</h1>
     <a class="button" href="https://discord.com/oauth2/authorize?client_id=1290668436107694172&permissions=8&scope=bot" target="_blank">Invite Dialex Bot to Your Server</a>
     <a class="button" href="#server-selection">Go to Server Selection</a>
-    <a class="button" href="#tos" onclick="toggleTOS()">View Terms of Service</a>
+    <a class="button" href="#tos" onclick="toggleTOS('tos')">View Terms of Service</a> <!-- Added TOS link -->
 
     <div id="server-selection" class="server-list" style="display: none;">
         <h2>Select a Server</h2>
@@ -158,12 +174,36 @@
         <button class="nav-button" onclick="nextSlide()">Next</button>
     </div>
 
-    <div id="tos" class="tos" style="display: none;">
-        <!-- ToS content here -->
+    <!-- Terms of Service for Members -->
+    <div id="tos" class="tos">
+        <h2>Terms of Service (ToS) for Members of Nexus Discord Server</h2>
+        <p><strong>Effective Date:</strong> [10-10-2024]</p>
+        <p>This document outlines the Terms of Service for members of the Nexus Discord server, owned by Dialex. By joining the server, you agree to comply with these terms.</p>
+
+        <h3>1. Acceptance of Terms</h3>
+        <p>By joining the Nexus Discord server, you acknowledge that you have read, understood, and agree to abide by these Terms of Service.</p>
+
+        <h3>2. Compliance with Discord’s Terms of Service</h3>
+        <p>You must adhere to all Discord guidelines and rules in addition to these server-specific terms.</p>
+
+        <!-- More ToS content... -->
+
+        <button class="button" onclick="toggleTOS()">Back to Main Menu</button>
     </div>
 
-    <div id="staff-tos" class="tos" style="display: none;">
-        <!-- Staff ToS content here -->
+    <!-- Terms of Service for Staff -->
+    <div id="staff-tos" class="tos">
+        <h2>Terms of Service (ToS) for Moderators, Admins, and CEO of Nexus Discord Server</h2>
+        <p><strong>Effective Date:</strong> 06-10-2024</p>
+        <p>This document outlines the Terms of Service for the moderators, admins, and CEO of the Nexus Discord server, owned by Dialex. By accepting a position on the staff team, you agree to comply with these terms.</p>
+
+        <h3>1. Roles and Responsibilities</h3>
+        <p><strong>a. Authority:</strong> Moderators and admins are entrusted with enforcing server rules and maintaining order within the Nexus community.</p>
+        <p><strong>b. Fairness:</strong> All rules must be enforced consistently and impartially.</p>
+
+        <!-- More Staff ToS content... -->
+
+        <button class="button" onclick="toggleTOS()">Back to Main Menu</button>
     </div>
 
     <script>
@@ -172,12 +212,18 @@
             document.getElementById('server-selection').style.display = 'flex';
         };
 
-        // ToS toggle
-        function toggleTOS() {
+        // ToS toggle for Members or Staff
+        function toggleTOS(sectionId) {
             const tos = document.getElementById('tos');
             const staffTos = document.getElementById('staff-tos');
-            tos.style.display = tos.style.display === 'none' ? 'block' : 'none';
-            staffTos.style.display = 'none';
+
+            if (sectionId === 'tos') {
+                tos.style.display = tos.style.display === 'none' ? 'block' : 'none';
+                staffTos.style.display = 'none';
+            } else {
+                staffTos.style.display = staffTos.style.display === 'none' ? 'block' : 'none';
+                tos.style.display = 'none';
+            }
         }
 
         // Carousel functionality
@@ -186,17 +232,25 @@
         const totalItems = document.querySelectorAll('.gallery-item').length;
 
         function updateGalleryPosition() {
-            const offset = -currentIndex * 100; // move to the next slide
+            const offset = -currentIndex * 100; // move to the correct slide
             gallery.style.transform = `translateX(${offset}%)`;
         }
 
         function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalItems;
+            if (currentIndex < totalItems - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // loop back to the first slide
+            }
             updateGalleryPosition();
         }
 
         function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalItems - 1; // loop back to the last slide
+            }
             updateGalleryPosition();
         }
     </script>
