@@ -10,7 +10,7 @@
             font-family: 'Comic Neue', cursive;
             margin: 0;
             padding: 0;
-            background-color: #121212;
+            background-color: #121212; /* Greyish black background */
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
@@ -64,57 +64,6 @@
         .under-construction {
             color: #ff9800;
         }
-
-        /* Gallery styles */
-        .about-server {
-            margin-top: 40px;
-            width: 80%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .gallery-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-        .gallery {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .gallery-item {
-            min-width: 100%;
-            background-color: #1e1e1e;
-            color: #ffffff;
-            padding: 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .gallery-item h3 {
-            margin-top: 0;
-        }
-
-        /* Navigation buttons */
-        .nav-button {
-            background-color: #1e88e5;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .nav-button:hover {
-            background-color: #1976d2;
-        }
-
-        /* Terms of Service */
         .tos {
             margin-top: 40px;
             background-color: rgba(30, 30, 30, 0.8);
@@ -124,7 +73,7 @@
             max-width: 600px;
             color: #ffffff;
             text-align: left;
-            display: none;
+            display: none; /* Initially hidden */
         }
         .tos h2 {
             margin-top: 0;
@@ -137,7 +86,7 @@
     <h1>Welcome to Dialex Bot's Page!</h1>
     <a class="button" href="https://discord.com/oauth2/authorize?client_id=1290668436107694172&permissions=8&scope=bot" target="_blank">Invite Dialex Bot to Your Server</a>
     <a class="button" href="#server-selection">Go to Server Selection</a>
-    <a class="button" href="#tos" onclick="toggleTOS('tos')">View Terms of Service</a> <!-- Added TOS link -->
+    <a class="button" href="#tos" onclick="toggleTOS()">View Terms of Service</a> <!-- Added TOS link -->
 
     <div id="server-selection" class="server-list" style="display: none;">
         <h2>Select a Server</h2>
@@ -148,34 +97,7 @@
         <div class="server-item under-construction">Unavailable</div>
     </div>
 
-    <!-- About the Server Gallery Section -->
-    <div class="about-server">
-        <h2>About the Server</h2>
-        <div class="gallery-container">
-            <div class="gallery" id="gallery">
-                <!-- Server info 1 -->
-                <div class="gallery-item">
-                    <h3>Dialex Server</h3>
-                    <p>A thriving community focused on technology, gaming, and bot development.</p>
-                </div>
-                <!-- Server info 2 -->
-                <div class="gallery-item">
-                    <h3>Nexus Server</h3>
-                    <p>The core of collaboration, open discussions, and exclusive bot features.</p>
-                </div>
-                <!-- Server info 3 -->
-                <div class="gallery-item">
-                    <h3>Talos Server</h3>
-                    <p>Coming soon: A dedicated server for advanced bot management.</p>
-                </div>
-            </div>
-        </div>
-        <button class="nav-button" onclick="prevSlide()">Previous</button>
-        <button class="nav-button" onclick="nextSlide()">Next</button>
-    </div>
-
-    <!-- Terms of Service for Members -->
-    <div id="tos" class="tos">
+    <div id="tos" class="tos"> <!-- Terms of Service Section -->
         <h2>Terms of Service (ToS) for Members of Nexus Discord Server</h2>
         <p><strong>Effective Date:</strong> [10-10-2024]</p>
         <p>This document outlines the Terms of Service for members of the Nexus Discord server, owned by Dialex. By joining the server, you agree to comply with these terms.</p>
@@ -186,13 +108,39 @@
         <h3>2. Compliance with Discord’s Terms of Service</h3>
         <p>You must adhere to all Discord guidelines and rules in addition to these server-specific terms.</p>
 
-        <!-- More ToS content... -->
+        <h3>3. Community Conduct</h3>
+        <p><strong>a. Respect for Others:</strong> Harassment, hate speech, or bullying will not be tolerated.</p>
+        <p><strong>b. No Spamming:</strong> Avoid excessive messaging, links, or promotions.</p>
+        <p><strong>c. Appropriate Content Sharing:</strong> Share only content that is suitable and aligns with community values.</p>
 
-        <button class="button" onclick="toggleTOS()">Back to Main Menu</button>
+        <h3>4. Originality and Integrity</h3>
+        <p><strong>a. No Plagiarism:</strong> Do not steal or claim ideas, content, or concepts from others.</p>
+        <p><strong>b. No Raids:</strong> Any attempts to disrupt the server will result in banning.</p>
+
+        <h3>5. Annoyance Policy</h3>
+        <p>Avoid actions that annoy or disturb others, including excessive trolling or disruptive behavior.</p>
+
+        <h3>6. Intellectual Property</h3>
+        <p>Respect the intellectual property rights of others, including any content shared within the server.</p>
+
+        <h3>7. Privacy and Safety</h3>
+        <p>Do not share personal information of yourself or others without consent.</p>
+
+        <h3>8. Creators and Owners</h3>
+        <p>This server is owned and operated by Dialex (User ID: 888452653359697991).</p>
+
+        <h3>9. Modifications</h3>
+        <p>Dialex reserves the right to modify these Terms of Service at any time, with notification of significant changes to members.</p>
+
+        <h3>10. Enforcement</h3>
+        <p>Violations may result in warnings, temporary bans, or permanent removal.</p>
+
+        <p>By participating in the Nexus Discord server, you agree to uphold these Terms of Service. Thank you for being a part of our community!</p>
+
+        <button class="button" onclick="toggleTOS()">Back to Main Menu</button> <!-- Back button -->
     </div>
 
-    <!-- Terms of Service for Staff -->
-    <div id="staff-tos" class="tos">
+    <div id="staff-tos" class="tos"> <!-- Terms of Service Section for Staff -->
         <h2>Terms of Service (ToS) for Moderators, Admins, and CEO of Nexus Discord Server</h2>
         <p><strong>Effective Date:</strong> 06-10-2024</p>
         <p>This document outlines the Terms of Service for the moderators, admins, and CEO of the Nexus Discord server, owned by Dialex. By accepting a position on the staff team, you agree to comply with these terms.</p>
@@ -201,59 +149,49 @@
         <p><strong>a. Authority:</strong> Moderators and admins are entrusted with enforcing server rules and maintaining order within the Nexus community.</p>
         <p><strong>b. Fairness:</strong> All rules must be enforced consistently and impartially.</p>
 
-        <!-- More Staff ToS content... -->
+        <h3>2. Conflict of Interest</h3>
+        <p>Staff members must avoid situations that could compromise their impartiality.</p>
 
-        <button class="button" onclick="toggleTOS()">Back to Main Menu</button>
+        <h3>3. Reporting Misconduct</h3>
+        <p>Staff are required to report any misconduct by members or other staff to the CEO promptly.</p>
+
+        <h3>4. Staff Abuse</h3>
+        <p>Any abuse of power by staff will not be tolerated.</p>
+
+        <h3>5. CEO Responsibilities</h3>
+        <p><strong>a. Leadership and Oversight:</strong> The CEO is responsible for the overall vision and direction of the Nexus server.</p>
+        <p><strong>b. Final Authority:</strong> The CEO has the final say in disputes and rule enforcement.</p>
+
+        <h3>6. Creators and Owners</h3>
+        <p>This server is owned and operated by Dialex (User ID: 888452653359697991).</p>
+
+        <h3>7. Modifications</h3>
+        <p>The CEO reserves the right to modify these Terms of Service at any time.</p>
+
+        <h3>8. Enforcement</h3>
+        <p>Violations may result in warnings, temporary bans, or permanent removal from the staff team.</p>
+
+        <p>By serving on the staff team of the Nexus Discord server, you agree to uphold these Terms of Service. Thank you for your commitment!</p>
+
+        <button class="button" onclick="toggleTOS()">Back to Main Menu</button> <!-- Back button -->
     </div>
 
     <script>
-        // Server selection toggle
         document.querySelector('.button:nth-of-type(2)').onclick = function() {
             document.getElementById('server-selection').style.display = 'flex';
         };
-
-        // ToS toggle for Members or Staff
-        function toggleTOS(sectionId) {
+        
+        function toggleTOS() {
             const tos = document.getElementById('tos');
             const staffTos = document.getElementById('staff-tos');
-
-            if (sectionId === 'tos') {
-                tos.style.display = tos.style.display === 'none' ? 'block' : 'none';
+            if (tos.style.display === 'none') {
+                tos.style.display = 'block';
                 staffTos.style.display = 'none';
             } else {
-                staffTos.style.display = staffTos.style.display === 'none' ? 'block' : 'none';
                 tos.style.display = 'none';
             }
         }
-
-        // Carousel functionality
-        let currentIndex = 0;
-        const gallery = document.getElementById('gallery');
-        const totalItems = document.querySelectorAll('.gallery-item').length;
-
-        function updateGalleryPosition() {
-            const offset = -currentIndex * 100; // move to the correct slide
-            gallery.style.transform = `translateX(${offset}%)`;
-        }
-
-        function nextSlide() {
-            if (currentIndex < totalItems - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // loop back to the first slide
-            }
-            updateGalleryPosition();
-        }
-
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = totalItems - 1; // loop back to the last slide
-            }
-            updateGalleryPosition();
-        }
     </script>
-
+    
 </body>
 </html>
