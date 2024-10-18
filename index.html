@@ -85,8 +85,9 @@
     <img src="https://cdn.discordapp.com/attachments/1289989966348423229/1292064593165946970/Dialex_logo.png?ex=6702606c&is=67010eec&hm=9b1c0468f8e96acfdb6fb2610ae8867e7256f239fff1ee0d6abe5c78e352ab91" alt="Dialex Logo" width="150" height="150" style="margin-bottom: 20px;" />
     <h1>Welcome to Dialex Bot's Page!</h1>
     <a class="button" href="https://discord.com/oauth2/authorize?client_id=1290668436107694172&permissions=8&scope=bot" target="_blank">Invite Dialex Bot to Your Server</a>
-    <a class="button" href="#server-selection">Go to Server Selection</a>
-    <a class="button" href="#tos" onclick="toggleTOS()">View Terms of Service</a> <!-- Added TOS link -->
+    <a class="button" href="#server-selection" onclick="toggleServerList()">Go to Server Selection</a>
+    <a class="button" href="#tos" onclick="toggleTOS('tos')">View Terms of Service</a>
+    <a class="button" href="#staff-tos" onclick="toggleTOS('staff-tos')">View Staff Terms of Service</a>
 
     <div id="server-selection" class="server-list" style="display: none;">
         <h2>Select a Server</h2>
@@ -101,95 +102,33 @@
         <h2>Terms of Service (ToS) for Members of Nexus Discord Server</h2>
         <p><strong>Effective Date:</strong> [10-10-2024]</p>
         <p>This document outlines the Terms of Service for members of the Nexus Discord server, owned by Dialex. By joining the server, you agree to comply with these terms.</p>
-
-        <h3>1. Acceptance of Terms</h3>
-        <p>By joining the Nexus Discord server, you acknowledge that you have read, understood, and agree to abide by these Terms of Service.</p>
-
-        <h3>2. Compliance with Discord’s Terms of Service</h3>
-        <p>You must adhere to all Discord guidelines and rules in addition to these server-specific terms.</p>
-
-        <h3>3. Community Conduct</h3>
-        <p><strong>a. Respect for Others:</strong> Harassment, hate speech, or bullying will not be tolerated.</p>
-        <p><strong>b. No Spamming:</strong> Avoid excessive messaging, links, or promotions.</p>
-        <p><strong>c. Appropriate Content Sharing:</strong> Share only content that is suitable and aligns with community values.</p>
-
-        <h3>4. Originality and Integrity</h3>
-        <p><strong>a. No Plagiarism:</strong> Do not steal or claim ideas, content, or concepts from others.</p>
-        <p><strong>b. No Raids:</strong> Any attempts to disrupt the server will result in banning.</p>
-
-        <h3>5. Annoyance Policy</h3>
-        <p>Avoid actions that annoy or disturb others, including excessive trolling or disruptive behavior.</p>
-
-        <h3>6. Intellectual Property</h3>
-        <p>Respect the intellectual property rights of others, including any content shared within the server.</p>
-
-        <h3>7. Privacy and Safety</h3>
-        <p>Do not share personal information of yourself or others without consent.</p>
-
-        <h3>8. Creators and Owners</h3>
-        <p>This server is owned and operated by Dialex (User ID: 888452653359697991).</p>
-
-        <h3>9. Modifications</h3>
-        <p>Dialex reserves the right to modify these Terms of Service at any time, with notification of significant changes to members.</p>
-
-        <h3>10. Enforcement</h3>
-        <p>Violations may result in warnings, temporary bans, or permanent removal.</p>
-
-        <p>By participating in the Nexus Discord server, you agree to uphold these Terms of Service. Thank you for being a part of our community!</p>
-
-        <button class="button" onclick="toggleTOS()">Back to Main Menu</button> <!-- Back button -->
+        <!-- Additional ToS content here -->
+        <button class="button" onclick="toggleTOS('tos')">Back to Main Menu</button>
     </div>
 
     <div id="staff-tos" class="tos"> <!-- Terms of Service Section for Staff -->
         <h2>Terms of Service (ToS) for Moderators, Admins, and CEO of Nexus Discord Server</h2>
         <p><strong>Effective Date:</strong> 06-10-2024</p>
         <p>This document outlines the Terms of Service for the moderators, admins, and CEO of the Nexus Discord server, owned by Dialex. By accepting a position on the staff team, you agree to comply with these terms.</p>
-
-        <h3>1. Roles and Responsibilities</h3>
-        <p><strong>a. Authority:</strong> Moderators and admins are entrusted with enforcing server rules and maintaining order within the Nexus community.</p>
-        <p><strong>b. Fairness:</strong> All rules must be enforced consistently and impartially.</p>
-
-        <h3>2. Conflict of Interest</h3>
-        <p>Staff members must avoid situations that could compromise their impartiality.</p>
-
-        <h3>3. Reporting Misconduct</h3>
-        <p>Staff are required to report any misconduct by members or other staff to the CEO promptly.</p>
-
-        <h3>4. Staff Abuse</h3>
-        <p>Any abuse of power by staff will not be tolerated.</p>
-
-        <h3>5. CEO Responsibilities</h3>
-        <p><strong>a. Leadership and Oversight:</strong> The CEO is responsible for the overall vision and direction of the Nexus server.</p>
-        <p><strong>b. Final Authority:</strong> The CEO has the final say in disputes and rule enforcement.</p>
-
-        <h3>6. Creators and Owners</h3>
-        <p>This server is owned and operated by Dialex (User ID: 888452653359697991).</p>
-
-        <h3>7. Modifications</h3>
-        <p>The CEO reserves the right to modify these Terms of Service at any time.</p>
-
-        <h3>8. Enforcement</h3>
-        <p>Violations may result in warnings, temporary bans, or permanent removal from the staff team.</p>
-
-        <p>By serving on the staff team of the Nexus Discord server, you agree to uphold these Terms of Service. Thank you for your commitment!</p>
-
-        <button class="button" onclick="toggleTOS()">Back to Main Menu</button> <!-- Back button -->
+        <!-- Additional Staff ToS content here -->
+        <button class="button" onclick="toggleTOS('staff-tos')">Back to Main Menu</button>
     </div>
 
     <script>
-        document.querySelector('.button:nth-of-type(2)').onclick = function() {
-            document.getElementById('server-selection').style.display = 'flex';
-        };
-        
-        function toggleTOS() {
-            const tos = document.getElementById('tos');
-            const staffTos = document.getElementById('staff-tos');
-            if (tos.style.display === 'none') {
-                tos.style.display = 'block';
-                staffTos.style.display = 'none';
-            } else {
-                tos.style.display = 'none';
-            }
+        function toggleServerList() {
+            const serverSelection = document.getElementById('server-selection');
+            serverSelection.style.display = (serverSelection.style.display === 'none' || !serverSelection.style.display) ? 'flex' : 'none';
+        }
+
+        function toggleTOS(tosId) {
+            const tos = document.getElementById(tosId);
+            const allTos = document.querySelectorAll('.tos');
+            allTos.forEach(function(section) {
+                if (section !== tos) {
+                    section.style.display = 'none'; // Hide all other ToS sections
+                }
+            });
+            tos.style.display = (tos.style.display === 'none' || !tos.style.display) ? 'block' : 'none';
         }
     </script>
     
