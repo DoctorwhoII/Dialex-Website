@@ -100,6 +100,7 @@
         }
 
         /* Show the tooltip on hover */
+        .button:hover .tooltip,
         .server-item:hover .tooltip {
             visibility: visible;
         }
@@ -110,17 +111,23 @@
 
     <img src="https://cdn.discordapp.com/attachments/1289989966348423229/1292064593165946970/Dialex_logo.png?ex=6702606c&is=67010eec&hm=9b1c0468f8e96acfdb6fb2610ae8867e7256f239fff1ee0d6abe5c78e352ab91" alt="Dialex Logo" width="150" height="150" style="margin-bottom: 20px;" />
     <h1>Welcome to Dialex Bot's Page!</h1>
+
+    <!-- Buttons with tooltips -->
     <a class="button" href="https://discord.com/oauth2/authorize?client_id=1290668436107694172&permissions=8&scope=bot" target="_blank">
         Invite Dialex Bot to Your Server
+        <div class="tooltip">Invite</div>
     </a>
     <a class="button" href="#server-selection" onclick="toggleServerList()">
         Go to Server Selection
+        <div class="tooltip">Choose Server</div>
     </a>
     <a class="button" href="#tos" onclick="toggleTOS('tos')">
         View Terms of Service
+        <div class="tooltip">Member ToS</div>
     </a>
     <a class="button" href="#staff-tos" onclick="toggleTOS('staff-tos')">
         View Staff Terms of Service
+        <div class="tooltip">Staff ToS</div>
     </a>
 
     <div id="server-selection" class="server-list" style="display: none;">
@@ -191,9 +198,9 @@
     </div>
 
     <div id="staff-tos" class="tos"> <!-- Terms of Service Section for Staff -->
-        <h2>Terms of Service (ToS) for Moderators, Admins, and CEO of Nexus Discord Server</h2>
-        <p><strong>Effective Date:</strong> 06-10-2024</p>
-        <p>This document outlines the Terms of Service for the moderators, admins, and the CEO of the Nexus Discord server, owned by Dialex. By serving on the staff team, you agree to abide by these terms.</p>
+        <h2>Terms of Service (ToS) for Moderators and Staff</h2>
+        <p><strong>Effective Date:</strong> [10-10-2024]</p>
+        <p>This document outlines the Terms of Service for moderators, admins, and the CEO of the Nexus Discord server, owned by Dialex. By serving on the staff team, you agree to abide by these terms.</p>
 
         <h3>1. Duties and Responsibilities</h3>
         <p><strong>a. Role Assignment:</strong> Each staff member has a specific role with defined responsibilities within the server.</p>
