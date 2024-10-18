@@ -57,6 +57,7 @@
             border-radius: 5px;
             width: 200px;
             cursor: pointer;
+            position: relative; /* For tooltip positioning */
             transition: transform 0.2s, border-color 0.2s;
         }
         .server-item:hover {
@@ -93,13 +94,13 @@
             bottom: 110%; /* Position it above the button */
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
+            width: 180px;
             font-size: 12px;
             z-index: 1;
         }
 
         /* Show the tooltip on hover */
-        .button:hover .tooltip {
+        .server-item:hover .tooltip {
             visibility: visible;
         }
 
@@ -111,28 +112,39 @@
     <h1>Welcome to Dialex Bot's Page!</h1>
     <a class="button" href="https://discord.com/oauth2/authorize?client_id=1290668436107694172&permissions=8&scope=bot" target="_blank">
         Invite Dialex Bot to Your Server
-        <div class="tooltip">Dialex is a server created for the purpose of making servers for entertainment and Communication</div>
     </a>
     <a class="button" href="#server-selection" onclick="toggleServerList()">
         Go to Server Selection
-        <div class="tooltip">Nexus is a server owned by Dialex. It is the first ever Server Mobile in the world. Join up!</div>
     </a>
     <a class="button" href="#tos" onclick="toggleTOS('tos')">
         View Terms of Service
-        <div class="tooltip">Under Construction</div>
     </a>
     <a class="button" href="#staff-tos" onclick="toggleTOS('staff-tos')">
         View Staff Terms of Service
-        <div class="tooltip">Under Construction</div>
     </a>
 
     <div id="server-selection" class="server-list" style="display: none;">
         <h2>Select a Server</h2>
-        <div class="server-item" onclick="window.open('https://discord.gg/UgNN2zcarf', '_blank')">Dialex</div>
-        <div class="server-item" onclick="window.open('https://discord.gg/jEF9YmDMQA', '_blank')">Nexus</div>
-        <div class="server-item under-construction">Talos (Under Construction)</div>
-        <div class="server-item under-construction">Unavailable</div>
-        <div class="server-item under-construction">Unavailable</div>
+        <div class="server-item" onclick="window.open('https://discord.gg/UgNN2zcarf', '_blank')">
+            Dialex
+            <div class="tooltip">Dialex is a server created for the purpose of making servers for entertainment and Communication.</div>
+        </div>
+        <div class="server-item" onclick="window.open('https://discord.gg/jEF9YmDMQA', '_blank')">
+            Nexus
+            <div class="tooltip">Nexus is a server owned by Dialex. It is the first ever Server Mobile in the world. Join up!</div>
+        </div>
+        <div class="server-item under-construction">
+            Talos (Under Construction)
+            <div class="tooltip">Talos: Under Construction</div>
+        </div>
+        <div class="server-item under-construction">
+            Unavailable
+            <div class="tooltip">Under Construction</div>
+        </div>
+        <div class="server-item under-construction">
+            Unavailable
+            <div class="tooltip">Under Construction</div>
+        </div>
     </div>
 
     <div id="tos" class="tos"> <!-- Terms of Service Section -->
@@ -181,10 +193,10 @@
     <div id="staff-tos" class="tos"> <!-- Terms of Service Section for Staff -->
         <h2>Terms of Service (ToS) for Moderators, Admins, and CEO of Nexus Discord Server</h2>
         <p><strong>Effective Date:</strong> 06-10-2024</p>
-        <p>This document outlines the Terms of Service for the moderators, admins, and CEO of the Nexus Discord server, owned by Dialex. By accepting a position on the staff team, you agree to comply with these terms.</p>
+        <p>This document outlines the Terms of Service for the moderators, admins, and the CEO of the Nexus Discord server, owned by Dialex. By serving on the staff team, you agree to abide by these terms.</p>
 
-        <h3>1. Roles and Responsibilities</h3>
-        <p><strong>a. Authority:</strong> Moderators and admins are entrusted with enforcing server rules and maintaining order within the server.</p>
+        <h3>1. Duties and Responsibilities</h3>
+        <p><strong>a. Role Assignment:</strong> Each staff member has a specific role with defined responsibilities within the server.</p>
         <p><strong>b. Responsibilities:</strong> Fulfill your role with diligence, ensuring the smooth operation of the server.</p>
 
         <h3>2. Behavior and Etiquette</h3>
